@@ -1,0 +1,36 @@
+Leo Tolstoy - War and Peace (1867) [old, world, historical, philosophical]
+Toni Morrison - Song of Solomon (1977) [new, american, African-American literature, magical realism]
+James Joyce - Ulysses (1920) [old, world, modernist literature]
+Carlos Ruiz Zafon - The Shadow of the Wind (2001) [new, world, drama]
+J.R.R. Tolkien - The Lord of the Rings (1954) [old, world, adventure, fantasy]
+Salman Rushdie - The Satanic Verses (1988) [new, world, magical realism]
+Miguel de Cervantes - Don Quixote (1605) [old, world, satire]
+Philip Pullman - The Golden Compass (1995) [new, world, fantasy]
+Joseph Heller - Catch-22 (1961) [old, american, satire]
+George Orwell - 1984 (1949) [old, world, dystopian, science fiction]
+Khaled Hosseini - The Kite Runner (2003) [new, world, coming of age, drama, historical]
+Louisa May Alcott - Little Women (1869) [old, american, coming of age]
+David Mitchell - The Cloud Atlas (2004) [new, world, historical, science fiction]
+Ayn Rand - The Fountainhead (1943) [old, world, philosophical]
+Oscar Wilde - The Picture of Dorian Gray (1890) [old, world, philosophical]
+Vladimir Nabokov - Lolita (1955) [old, world, drama]
+Kathryn Stockett - The Help (2009) [new, american, African-American literature, historical]
+Mary Karr - The Liar’s Club (1995) [new, american, memoir]
+Herman Melville - Moby-Dick (1851) [old, american, adventure]
+Thomas Pynchon - Gravity’s Rainbow (1973) [new, american, historical, satire, science fiction]
+Margaret Atwood - The Handmaid’s Tale (1985) [new, world, dystopian, science fiction]
+
+ALL GENRES:
+adventure
+African-American literature
+coming of age
+drama
+dystopian
+fantasy
+historical
+magical realism
+memoir
+modernist literature
+philosophical
+satire
+science fiction
