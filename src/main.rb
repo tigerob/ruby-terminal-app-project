@@ -4,7 +4,7 @@ all_books = [@tolstoy, @morrison, @joyce]
 
 # users_chosen_books = []
 
-# Method for menu
+# -------------------- Method for menu --------------------
 def display_menu_and_take_users_choice(all_books)
     system("clear")
     puts "Welcome to 21 Books You’ve Been Meaning To Read. Etc. Etc. \n\nHow would you like to choose a book? Select from the following options and enter a number to continue:\n\n1.   Choose from the full list of books\n2.   Choose by genre\n3.   Take the 'what do I feel like?' quiz\n4.   Spin the wheel for a random book\n5.   I'm done for now - exit\n\n"
@@ -30,7 +30,7 @@ def display_menu_and_take_users_choice(all_books)
     end
 end
 
-# Method for menu option 1
+# -------------------- Method for menu option 1 --------------------
 def display_all_books(all_books)
     all_books.each do |book|
         puts book.book_details
@@ -38,7 +38,7 @@ def display_all_books(all_books)
     puts
 end
 
-# Methods for menu option 2
+# -------------------- Methods for menu option 2 --------------------
 def display_all_genres_and_take_users_choice(all_books)
     puts "Select from the following genres and enter a number to continue:\n\n1.   Adventure\n2.   African-American literature\n3.   Coming of age\n4.   Drama\n5.   Dystopian\n6.   Fantasy\n7.   Historical\n8.   Magical realism\n9.   Memoir\n10.  Modernist literature\n11.  Philosophical\n12.  Satire\n13.  Science fiction\n\n"
     users_choice = gets.strip.to_i # raise exception if not an integer value 1-13?
@@ -46,11 +46,14 @@ def display_all_genres_and_take_users_choice(all_books)
         when 1
 
         when 2
+            system("clear")
+            puts "Here's some food for thought (aka reading for the soul):\n\n"
             all_books.each do |book|
-                if @genres.include?("African-American literature")
+                if book.genres.include?("African-American literature")
                     puts book.book_details
                 end
             end
+            puts
         when 3
 
         when 4
@@ -76,14 +79,24 @@ def display_all_genres_and_take_users_choice(all_books)
     end
 end
 
+# -------------------- Methods for menu option 2 --------------------
+
+def quiz_q_1
+
+end
+
+def run_quiz
+    quiz_q_1
+end
 
 
-# Methods that run app
-display_menu_and_take_users_choice(all_books)
+# -------------------- Method that runs app --------------------
+def run
+    display_menu_and_take_users_choice(all_books)
+end
 
 
-
-
+# ----------------------------------------
 # menu_loop = true
 # while menu_loop == true
 # end
