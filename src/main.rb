@@ -17,12 +17,13 @@ def display_menu_and_take_users_choice(all_books)
         when 2
             system("clear")
             display_all_genres_and_take_users_choice(all_books)
-
             #insert method to choose a book from the array and add it to users_chosen_books array
         when 3
-            # insert method
+            system("clear")
+            run_quiz()
             #insert method to choose a book from the array and add it to users_chosen_books array
         when 4
+            system("clear")
             # insert method
             #insert method to choose a book from the array and add it to users_chosen_books array
         when 5
@@ -79,21 +80,61 @@ def display_all_genres_and_take_users_choice(all_books)
     end
 end
 
-# -------------------- Methods for menu option 2 --------------------
+# -------------------- Methods for menu option 3 --------------------
 
-def quiz_q_1
-
-end
+quiz_answers = []
+quiz_q_3_filtered_genres = []
 
 def run_quiz
     quiz_q_1
+    quiz_q_2
+    quiz_q_3
+    case quiz_answers
+        when []
+        
+        when
+
+    end
+end
+
+def quiz_q_1
+    puts "Do you feel like something old or something new? (We think of anything published more than 50 years ago as old and anything published within the last 50 years as new.) Enter either 'old' or 'new' to continue:\n\n"
+    users_choice = gets.strip.downcase # raise exception if not 'old' or 'new'
+    case users_choice
+        when "old"
+            quiz_answers.push("old")
+        when "new"
+            quiz_answers.push("new")
+    end
+end
+
+def quiz_q_2
+    puts "Do you feel like world literature or American literature? Enter either 'world' or American' to continue:\n\n"
+    users_choice = gets.strip.downcase # raise exception if not 'world' or 'American'
+    case users_choice
+        when "world"
+            quiz_answers.push("world")
+        when "american"
+            quiz_answers.push("american")
+    end
+end
+
+def quiz_q_3
+    puts "Which genre do you most feel like? Enter the genre to continue:\n\n"
+    case quiz_answers
+        when ["old", "world"]
+            all_books.each do |book|
+                if book.recency_and_geography[:recency] == "old" && book.recency_and_geography[:geography] == "world"
+                    quiz_q_3_filtered_genres.push(book.genres)
+                end
+    end
+    puts quiz_q_3_filtered_genres # change to print one genre per line and remove duplicates
 end
 
 
 # -------------------- Method that runs app --------------------
-def run
-    display_menu_and_take_users_choice(all_books)
-end
+
+display_menu_and_take_users_choice(all_books)
 
 
 # ----------------------------------------
