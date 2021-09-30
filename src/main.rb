@@ -6,7 +6,7 @@ all_books = [@tolstoy, @morrison, @joyce, @zafon, @tolkien, @rushdie, @cervantes
 
 # -------------------- Method for menu --------------------
 def display_menu_and_take_users_choice(all_books)
-    puts "Welcome to 21 Books You’ve Been Meaning To Read. The terminal app that solves your dilemma of choosing which book to read.\n\nIn today's world, some people feel they are spoilt for choice, but hate making a decision. If that's you, look no further. This app knows Penguin Random House’s 'the 21 books you've been meaning to read' and will help you find your next nourshing page-turner.\n\nHow would you like to choose a book? Select from the following options and enter a number to continue:\n\n1.   Choose from the full list of books\n2.   Choose by genre\n3.   Take the 'what do I feel like?' quiz\n4.   Spin the wheel for a random book\n5.   I'm done for now - EXIT\n\n"
+    puts "Welcome to 21 Books You’ve Been Meaning To Read - the terminal app that solves your dilemma of choosing which book to read.\n\nIn today's world, some people feel they are spoilt for choice, but hate making a decision. If that's you, look no further. This app knows Penguin Random House’s 'the 21 books you've been meaning to read' and will help you find your next nourshing page-turner.\n\nHow would you like to choose a book? Select from the following options and enter a number to continue:\n\n1.   Choose from the full list of books\n2.   Choose by genre\n3.   Take the 'what do I feel like?' quiz\n4.   Spin the wheel for a random book\n5.   I'm done for now - EXIT\n\n"
     users_choice = gets.strip.to_i
     case users_choice
         when 1
@@ -31,7 +31,7 @@ def display_menu_and_take_users_choice(all_books)
     raise if ![1, 2, 3, 4].include?(users_choice)
     rescue
         system("clear")
-        puts "---------- Please type in a number from 1 to 4 to proceed! Here we go again :) ----------\n\n"
+        puts "-------------------------------------------------------------------\n\nPlease type in a number from 1 to 4 to proceed! Here we go again :)\n\n-------------------------------------------------------------------\n\n"
         retry
 end
 
@@ -49,7 +49,7 @@ def display_all_genres_and_take_users_choice(all_books)
     puts "Select from the following genres and enter a number to continue:\n\n1.   Adventure\n2.   African-American literature\n3.   Coming of age\n4.   Drama\n5.   Dystopian\n6.   Fantasy\n7.   Historical\n8.   Magical realism\n9.   Memoir\n10.  Modernist literature\n11.  Philosophical\n12.  Satire\n13.  Science fiction\n\n"
     users_choice = gets.strip.to_i
     system("clear")
-    puts "Here's some food for thought (aka reading for the soul):\n\n"
+    puts "Here's some piping-hot literature that is right up your alley:\n\n"
     case users_choice
         when 1
             all_books.each do |book|
@@ -134,7 +134,7 @@ def display_all_genres_and_take_users_choice(all_books)
     raise if ![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].include?(users_choice)
     rescue
         system("clear")
-        puts "---------- Please type in a number from 1 to 13 to proceed! Here we go again :) ----------\n\n"
+        puts "--------------------------------------------------------------------\n\nPlease type in a number from 1 to 13 to proceed! Here we go again :)\n\n--------------------------------------------------------------------\n\n"
         retry
 end
 
@@ -159,7 +159,7 @@ def quiz_q_1(quiz_answers)
     rescue
         quiz_answers.pop()
         system("clear")
-        puts "---------- Please type in either 'new' or 'old' for this question! Here it is again :) ----------\n\n"
+        puts "---------------------------------------------------------------------------\n\nPlease type in either 'new' or 'old' for this question! Here it is again :)\n\n---------------------------------------------------------------------------\n\n"
         retry
 end
 
@@ -171,7 +171,7 @@ def quiz_q_2(quiz_answers)
     rescue
         quiz_answers.pop()
         system("clear")
-        puts "---------- Please type in either 'American' or 'world' for this question! Here it is again :) ----------\n\n"
+        puts "----------------------------------------------------------------------------------\n\nPlease type in either 'American' or 'world' for this question! Here it is again :)\n\n----------------------------------------------------------------------------------\n\n"
         retry
 end
 
@@ -192,7 +192,7 @@ def quiz_q_3(quiz_answers, all_books, quiz_q_3_genres)
     quiz_answers.push(users_choice)
 
     system("clear")
-    puts "Here's some food for thought (aka reading for the soul):\n\n"
+    puts "Here's some piping-hot literature that is right up your alley:\n\n"
     all_books.each do |book|
         if book.recency_and_geography[:recency] == quiz_answers[0] && book.recency_and_geography[:geography] == quiz_answers[1] && book.genres.include?(quiz_answers[2])
             puts book.book_details
@@ -204,7 +204,7 @@ def quiz_q_3(quiz_answers, all_books, quiz_q_3_genres)
     rescue
         quiz_answers.pop()
         system("clear")
-        puts "---------- Please type in one of the genres listed for this question! Here it is again :) ----------\n\n"
+        puts "------------------------------------------------------------------------------\n\nPlease type in one of the genres listed for this question! Here it is again :)\n\n------------------------------------------------------------------------------\n\n"
         retry
 end
 
@@ -217,6 +217,9 @@ def display_random_book(all_books)
     puts
 end
 
+
+# -------------------- Method for book art --------------------
+
 def display_book_art
     puts ""\
     "      __...--~~~~~-._   _.-~~~~~--...__\n"\
@@ -227,8 +230,9 @@ def display_book_art
     "====================\\\\|//====================\n"\
     "                    `---`\n\n\n"
 end
+ 
 
-# -------------------- Method that runs app --------------------
+# -------------------- Run methods that carry out app --------------------
 system("clear")
 display_menu_and_take_users_choice(all_books)
 display_book_art()
@@ -237,4 +241,3 @@ display_book_art()
 # menu_loop = true
 # while menu_loop == true
 # end
-
