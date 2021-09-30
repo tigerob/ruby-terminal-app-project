@@ -217,11 +217,21 @@ def display_random_book(all_books)
     puts
 end
 
+def display_book_art
+    puts ""\
+    "      __...--~~~~~-._   _.-~~~~~--...__\n"\
+    "    //               `V'               \\\\\n"\
+    "   //                 |                 \\\\\n"\
+    "  //__...--~~~~~~-._  |  _.-~~~~~~--...__\\\\\n"\
+    " //__.....----~~~~._\\ | /_.~~~~----.....__\\\\\n"\
+    "====================\\\\|//====================\n"\
+    "                    `---`\n\n\n"
+end
 
 # -------------------- Method that runs app --------------------
 system("clear")
 display_menu_and_take_users_choice(all_books)
-
+display_book_art()
 
 # ----------------------------------------
 # menu_loop = true
