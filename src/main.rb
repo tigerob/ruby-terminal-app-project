@@ -1,13 +1,13 @@
 require_relative "./library.rb"
 
-all_books = [@tolstoy, @morrison, @joyce]
+all_books = [@tolstoy, @morrison, @joyce, @zafon, @tolkien, @rushdie, @cervantes, @pullman, @heller, @orwell, @hosseini, @alcott, @mitchell, @rand, @wilde, @nabokov, @stockett, @karr, @melville, @pynchon, @atwood]
 
 # users_chosen_books = []
 
 # -------------------- Method for menu --------------------
 def display_menu_and_take_users_choice(all_books)
     puts "Welcome to 21 Books You’ve Been Meaning To Read. Etc. Etc. \n\nHow would you like to choose a book? Select from the following options and enter a number to continue:\n\n1.   Choose from the full list of books\n2.   Choose by genre\n3.   Take the 'what do I feel like?' quiz\n4.   Spin the wheel for a random book\n5.   I'm done for now - press enter to exit\n\n"
-    users_choice = gets.strip.to_i # raise exception if not an integer value 1-4?
+    users_choice = gets.strip.to_i
     case users_choice
         when 1
             system("clear")
@@ -46,46 +46,94 @@ end
 # -------------------- Method for menu option 2 --------------------
 def display_all_genres_and_take_users_choice(all_books)
     puts "Select from the following genres and enter a number to continue:\n\n1.   Adventure\n2.   African-American literature\n3.   Coming of age\n4.   Drama\n5.   Dystopian\n6.   Fantasy\n7.   Historical\n8.   Magical realism\n9.   Memoir\n10.  Modernist literature\n11.  Philosophical\n12.  Satire\n13.  Science fiction\n\n"
-    users_choice = gets.strip.to_i # raise exception if not an integer value 1-13?
+    users_choice = gets.strip.to_i
+    system("clear")
+    puts "Here's some food for thought (aka reading for the soul):\n\n"
     case users_choice
         when 1
-
+            all_books.each do |book|
+                if book.genres.include?("adventure")
+                    puts book.book_details
+                end
+            end
         when 2
-            system("clear")
-            puts "Here's some food for thought (aka reading for the soul):\n\n"
             all_books.each do |book|
                 if book.genres.include?("african-american literature")
                     puts book.book_details
                 end
             end
         when 3
-
+            all_books.each do |book|
+                if book.genres.include?("coming of age")
+                    puts book.book_details
+                end
+            end
         when 4
-
+            all_books.each do |book|
+                if book.genres.include?("drama")
+                    puts book.book_details
+                end
+            end
         when 5
-
+            all_books.each do |book|
+                if book.genres.include?("dystopian")
+                    puts book.book_details
+                end
+            end
         when 6
-
+            all_books.each do |book|
+                if book.genres.include?("fantasy")
+                    puts book.book_details
+                end
+            end
         when 7
-
+            all_books.each do |book|
+                if book.genres.include?("historical")
+                    puts book.book_details
+                end
+            end
         when 8
-
+            all_books.each do |book|
+                if book.genres.include?("magical realism")
+                    puts book.book_details
+                end
+            end
         when 9
-
+            all_books.each do |book|
+                if book.genres.include?("memoir")
+                    puts book.book_details
+                end
+            end
         when 10
-
+            all_books.each do |book|
+                if book.genres.include?("modernist literature")
+                    puts book.book_details
+                end
+            end
         when 11
-
+            all_books.each do |book|
+                if book.genres.include?("philosophical")
+                    puts book.book_details
+                end
+            end
         when 12
-
+            all_books.each do |book|
+                if book.genres.include?("satire")
+                    puts book.book_details
+                end
+            end
         when 13
-
+            all_books.each do |book|
+                if book.genres.include?("science fiction")
+                    puts book.book_details
+                end
+            end
     end
     puts
     raise if ![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].include?(users_choice)
     rescue
         system("clear")
-        puts "---------- Please type in a number from 1 to 4 to proceed! Here we go again :) ----------\n\n"
+        puts "---------- Please type in a number from 1 to 13 to proceed! Here we go again :) ----------\n\n"
         retry
 end
 
@@ -136,7 +184,6 @@ def quiz_q_3(quiz_answers, all_books, quiz_q_3_genres)
     end
     quiz_q_3_genres.flatten!
     quiz_q_3_genres.uniq!
-    # quiz_q_3_genres.capitalize!
     puts quiz_q_3_genres
 
     puts
@@ -165,7 +212,8 @@ end
 
 def display_random_book(all_books)
     random_book = all_books.sample
-    puts random_book.book_details
+    puts "The wheel has spoken:\n\n#{random_book.book_details}"
+    puts
 end
 
 
