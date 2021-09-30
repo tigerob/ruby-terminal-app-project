@@ -7,7 +7,7 @@ all_books = [@tolstoy, @morrison, @joyce, @test]
 # -------------------- Method for menu --------------------
 def display_menu_and_take_users_choice(all_books)
     system("clear")
-    puts "Welcome to 21 Books You’ve Been Meaning To Read. Etc. Etc. \n\nHow would you like to choose a book? Select from the following options and enter a number to continue:\n\n1.   Choose from the full list of books\n2.   Choose by genre\n3.   Take the 'what do I feel like?' quiz\n4.   Spin the wheel for a random book\n5.   I'm done for now - exit\n\n"
+    puts "Welcome to 21 Books You’ve Been Meaning To Read. Etc. Etc. \n\nHow would you like to choose a book? Select from the following options and enter a number to continue:\n\n1.   Choose from the full list of books\n2.   Choose by genre\n3.   Take the 'what do I feel like?' quiz\n4.   Spin the wheel for a random book\n5.   I'm done for now - press enter to exit\n\n"
     users_choice = gets.strip.to_i # raise exception if not an integer value 1-4?
     case users_choice
         when 1
@@ -50,11 +50,10 @@ def display_all_genres_and_take_users_choice(all_books)
             system("clear")
             puts "Here's some food for thought (aka reading for the soul):\n\n"
             all_books.each do |book|
-                if book.genres.include?("African-American literature")
+                if book.genres.include?("african-american literature")
                     puts book.book_details
                 end
             end
-            puts
         when 3
 
         when 4
@@ -78,6 +77,7 @@ def display_all_genres_and_take_users_choice(all_books)
         when 13
 
     end
+    puts
 end
 
 # -------------------- Methods for menu option 3 --------------------
@@ -91,7 +91,6 @@ def run_quiz(all_books)
     quiz_q_2(quiz_answers)
     system("clear")
     quiz_q_3(quiz_answers, all_books, quiz_q_3_genres)
-    system("clear")
     # case quiz_answers
     #     when []
         
@@ -109,7 +108,7 @@ def quiz_q_1(quiz_answers)
         quiz_answers.pop()
         system("clear")
         puts "Please type in either 'new' or 'old' for this question! Here it is again :)\n\n"
-        quiz_q_1(quiz_answers)
+        retry
 end
 
 def quiz_q_2(quiz_answers)
@@ -121,22 +120,42 @@ def quiz_q_2(quiz_answers)
         quiz_answers.pop()
         system("clear")
         puts "Please type in either 'American' or 'world' for this question! Here it is again :)\n\n"
-        quiz_q_2(quiz_answers)
+        retry
 end
 
 def quiz_q_3(quiz_answers, all_books, quiz_q_3_genres)
     puts "Which genre do you most feel like? Enter one of the following genres to continue:\n\n"
+
     all_books.each do |book|
         if book.recency_and_geography[:recency] == quiz_answers[0] && book.recency_and_geography[:geography] == quiz_answers[1]
             quiz_q_3_genres.push(book.genres)
         end
-    end    
+    end
     quiz_q_3_genres.flatten!
     quiz_q_3_genres.uniq!
+    # quiz_q_3_genres.capitalize!
     puts quiz_q_3_genres
+
     puts
-    users_choice = gets.strip.downcase # raise exception if input not included in quiz_q_3_genres
+    users_choice = gets.strip.downcase
+    quiz_answers.push(users_choice)
+
+
+    system("clear")
+    puts "Here's some food for thought (aka reading for the soul):\n\n"
+    all_books.each do |book|
+        if book.recency_and_geography[:recency] == quiz_answers[0] && book.recency_and_geography[:geography] == quiz_answers[1] && book.genres.include?(quiz_answers[2])
+            puts book.book_details
+        end
+    end
     puts
+
+    raise if !quiz_q_3_genres.include?(users_choice)
+    rescue
+        quiz_answers.pop()
+        system("clear")
+        puts "Please type in one of the genres listed for this question! Here it is again :)\n\n"
+        retry
 
 end
 
