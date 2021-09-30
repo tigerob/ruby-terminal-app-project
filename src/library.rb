@@ -5,3 +5,5 @@ require_relative "./Book.rb"
 @morrison = Book.new("Toni Morrison - Song of Solomon (1977)", {:recency => "new", :geography => "american"}, ["African-American literature", "magical realism"])
 
 @joyce = Book.new("James Joyce - Ulysses (1920)", {:recency => "old", :geography => "world"}, ["modernist literature"])
+
+@test = Book.new("This is a test book", {:recency => "new", :geography => "american"}, ["test genre A", "magical realism", "test genre B"])

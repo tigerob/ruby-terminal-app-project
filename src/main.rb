@@ -1,6 +1,6 @@
 require_relative "./library.rb"
 
-all_books = [@tolstoy, @morrison, @joyce]
+all_books = [@tolstoy, @morrison, @joyce, @test]
 
 # users_chosen_books = []
 
@@ -103,38 +103,40 @@ end
 def quiz_q_1(quiz_answers)
     puts "Do you feel like something new or something old? (We think of anything published within the last 50 years as new and anything published more than 50 years ago as old.) Enter either 'new' or 'old' to continue:\n\n"
     users_choice = gets.strip.downcase
+    quiz_answers.push(users_choice)
     raise if users_choice != "new" && users_choice != "old"
     rescue
+        quiz_answers.pop()
         system("clear")
         puts "Please type in either 'new' or 'old' for this question! Here it is again :)\n\n"
         quiz_q_1(quiz_answers)
-    quiz_answers.push(users_choice) 
 end
 
 def quiz_q_2(quiz_answers)
     puts "Do you feel like American literature or world literature? Enter either 'American' or 'world' to continue:\n\n"
     users_choice = gets.strip.downcase # raise exception if not 'world' or 'American'
+    quiz_answers.push(users_choice)
     raise if users_choice != "american" && users_choice != "world"
     rescue
+        quiz_answers.pop()
         system("clear")
         puts "Please type in either 'American' or 'world' for this question! Here it is again :)\n\n"
         quiz_q_2(quiz_answers)
-    quiz_answers.push(users_choice)
 end
 
 def quiz_q_3(quiz_answers, all_books, quiz_q_3_genres)
     puts "Which genre do you most feel like? Enter one of the following genres to continue:\n\n"
-    case quiz_answers
-        when ["new", "american"]
-            all_books.each do |book|
-                if book.recency_and_geography[:recency] == "new" && book.recency_and_geography[:geography] == "american"
-                    quiz_q_3_genres.push(book.genres)
-                end
-            end
-    end
-    puts quiz_q_3_genres # change to print one genre per line and remove duplicates
+    all_books.each do |book|
+        if book.recency_and_geography[:recency] == quiz_answers[0] && book.recency_and_geography[:geography] == quiz_answers[1]
+            quiz_q_3_genres.push(book.genres)
+        end
+    end    
+    quiz_q_3_genres.flatten!
+    quiz_q_3_genres.uniq!
+    puts quiz_q_3_genres
     puts
-    users_choice = gets.strip.downcase # raise exception if input not included in quiz_q_3_genre
+    users_choice = gets.strip.downcase # raise exception if input not included in quiz_q_3_genres
+    puts
 
 end
 
