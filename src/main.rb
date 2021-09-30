@@ -6,7 +6,7 @@ all_books = [@tolstoy, @morrison, @joyce, @zafon, @tolkien, @rushdie, @cervantes
 
 # -------------------- Method for menu --------------------
 def display_menu_and_take_users_choice(all_books)
-    puts "Welcome to 21 Books You’ve Been Meaning To Read. Etc. Etc. \n\nHow would you like to choose a book? Select from the following options and enter a number to continue:\n\n1.   Choose from the full list of books\n2.   Choose by genre\n3.   Take the 'what do I feel like?' quiz\n4.   Spin the wheel for a random book\n5.   I'm done for now - press enter to exit\n\n"
+    puts "Welcome to 21 Books You’ve Been Meaning To Read. The terminal app that solves your dilemma of choosing which book to read.\n\nIn today's world, some people feel they are spoilt for choice, but hate making a decision. If that's you, look no further. This app knows Penguin Random House’s 'the 21 books you've been meaning to read' and will help you find your next nourshing page-turner.\n\nHow would you like to choose a book? Select from the following options and enter a number to continue:\n\n1.   Choose from the full list of books\n2.   Choose by genre\n3.   Take the 'what do I feel like?' quiz\n4.   Spin the wheel for a random book\n5.   I'm done for now - EXIT\n\n"
     users_choice = gets.strip.to_i
     case users_choice
         when 1
@@ -37,6 +37,7 @@ end
 
 # -------------------- Method for menu option 1 --------------------
 def display_all_books(all_books)
+    puts "Take your pick! Here's the full list:\n\n"
     all_books.each do |book|
         puts book.book_details
     end
