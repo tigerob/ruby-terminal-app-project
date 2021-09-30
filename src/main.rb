@@ -100,26 +100,26 @@ def run_quiz(all_books)
     # end
 end
 
-def quiz_q_1 (quiz_answers)
+def quiz_q_1(quiz_answers)
     puts "Do you feel like something new or something old? (We think of anything published within the last 50 years as new and anything published more than 50 years ago as old.) Enter either 'new' or 'old' to continue:\n\n"
-    users_choice = gets.strip.downcase # raise exception if not 'old' or 'new'
-    case users_choice
-        when "new"
-            quiz_answers.push("new")
-        when "old"
-            quiz_answers.push("old")
-    end
+    users_choice = gets.strip.downcase
+    raise if users_choice != "new" && users_choice != "old"
+    rescue
+        system("clear")
+        puts "Please type in either 'new' or 'old' for this question! Here it is again :)\n\n"
+        quiz_q_1(quiz_answers)
+    quiz_answers.push(users_choice) 
 end
 
 def quiz_q_2(quiz_answers)
     puts "Do you feel like American literature or world literature? Enter either 'American' or 'world' to continue:\n\n"
     users_choice = gets.strip.downcase # raise exception if not 'world' or 'American'
-    case users_choice
-        when "american"
-            quiz_answers.push("american")
-        when "world"
-            quiz_answers.push("world")
-    end
+    raise if users_choice != "american" && users_choice != "world"
+    rescue
+        system("clear")
+        puts "Please type in either 'American' or 'world' for this question! Here it is again :)\n\n"
+        quiz_q_2(quiz_answers)
+    quiz_answers.push(users_choice)
 end
 
 def quiz_q_3(quiz_answers, all_books, quiz_q_3_genres)
@@ -134,7 +134,8 @@ def quiz_q_3(quiz_answers, all_books, quiz_q_3_genres)
     end
     puts quiz_q_3_genres # change to print one genre per line and remove duplicates
     puts
-    users_choice = gets.strip.downcase # raise exception if not '[each genre]'
+    users_choice = gets.strip.downcase # raise exception if input not included in quiz_q_3_genre
+
 end
 
 
