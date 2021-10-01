@@ -6,29 +6,33 @@ all_books = [@tolstoy, @morrison, @joyce, @zafon, @tolkien, @rushdie, @cervantes
 
 # -------------------- Method for menu --------------------
 def display_menu_and_take_users_choice(all_books)
-    puts "Welcome to 21 Books You’ve Been Meaning To Read - the terminal app that solves your dilemma of choosing which book to read.\n\nIn today's world, some people feel they are spoilt for choice, but hate making a decision. If that's you, look no further. This app knows Penguin Random House’s 'the 21 books you've been meaning to read' and will help you find your next nourshing page-turner.\n\nHow would you like to choose a book? Select from the following options and enter a number to continue:\n\n1.   Choose from the full list of books\n2.   Choose by genre\n3.   Take the 'what do I feel like?' quiz\n4.   Spin the wheel for a random book\n5.   I'm done for now - EXIT\n\n"
+    puts "Welcome to 21 Books You’ve Been Meaning To Read - the terminal app that solves your dilemma of choosing which book to read.\n\nIn today's world, some people feel they are spoilt for choice, but are paralysed when it comes to making a decision. If that's you, look no further. This app knows Penguin Random House’s 'The 21 Books You've Been Meaning To Read' and will help you find your next nourshing page-turner.\n\nHow would you like to choose a book? Select from the following options and enter a number to continue:\n\n1.   Choose from the full list of books\n2.   Choose by genre\n3.   Take the 'what do I feel like?' quiz\n4.   Spin the wheel for a random book\n5.   I'm done for now - exit\n\n"
     users_choice = gets.strip.to_i
     case users_choice
         when 1
             system("clear")
             display_all_books(all_books)
+            display_book_art
             #insert method to choose a book from the array and add it to users_chosen_books array
         when 2
             system("clear")
             display_all_genres_and_take_users_choice(all_books)
+            display_book_art
             #insert method to choose a book from the array and add it to users_chosen_books array
         when 3
             system("clear")
             run_quiz(all_books)
+            display_book_art
             #insert method to choose a book from the array and add it to users_chosen_books array
         when 4
             system("clear")
             display_random_book(all_books)
+            display_book_art
             #insert method to choose a book from the array and add it to users_chosen_books array
         when 5
-            # exit
+            exit_app("Thank you for visiting. Happy reading!")
     end
-    raise if ![1, 2, 3, 4].include?(users_choice)
+    raise if ![1, 2, 3, 4, 5].include?(users_choice)
     rescue
         system("clear")
         puts "-------------------------------------------------------------------\n\nPlease type in a number from 1 to 4 to proceed! Here we go again :)\n\n-------------------------------------------------------------------\n\n"
@@ -228,16 +232,24 @@ def display_book_art
     "  //__...--~~~~~~-._  |  _.-~~~~~~--...__\\\\\n"\
     " //__.....----~~~~._\\ | /_.~~~~----.....__\\\\\n"\
     "====================\\\\|//====================\n"\
-    "                    `---`\n\n\n"
+    "                    `---`\n\n"
+    puts "Press enter to return to the start menu.\n\n\n"
+    gets
 end
- 
+
+
+# -------------------- Method to exit app --------------------
+
+def exit_app(message)
+    system("clear")
+    puts "#{message}\n\n"
+    exit
+end
+
 
 # -------------------- Run methods that carry out app --------------------
-system("clear")
-display_menu_and_take_users_choice(all_books)
-display_book_art()
 
-# ----------------------------------------
-# menu_loop = true
-# while menu_loop == true
-# end
+while true
+    system("clear")
+    display_menu_and_take_users_choice(all_books)
+end
