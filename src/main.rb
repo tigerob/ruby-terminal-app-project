@@ -2,8 +2,6 @@ require_relative "./library.rb"
 
 all_books = [@tolstoy, @morrison, @joyce, @zafon, @tolkien, @rushdie, @cervantes, @pullman, @heller, @orwell, @hosseini, @alcott, @mitchell, @rand, @wilde, @nabokov, @stockett, @karr, @melville, @pynchon, @atwood]
 
-# users_chosen_books = []
-
 # -------------------- Method for menu --------------------
 def display_menu_and_take_users_choice(all_books)
     puts "Welcome to 21 Books You’ve Been Meaning To Read - the terminal app that solves your dilemma of choosing which book to read.\n\nIn today's world, some people feel they are spoilt for choice, but are paralysed when it comes to making a decision. If that's you, look no further. This app knows Penguin Random House’s 'The 21 Books You've Been Meaning To Read' and will help you find your next nourshing page-turner.\n\nHow would you like to choose a book? Select from the following options and enter a number to continue:\n\n1.   Choose from the full list of books\n2.   Choose by genre\n3.   Take the 'what do I feel like?' quiz\n4.   Spin the wheel for a random book\n5.   I'm done for now - exit\n\n"
@@ -12,26 +10,20 @@ def display_menu_and_take_users_choice(all_books)
         when 1
             system("clear")
             display_all_books(all_books)
-            display_book_art
-            #insert method to choose a book from the array and add it to users_chosen_books array
         when 2
             system("clear")
             display_all_genres_and_take_users_choice(all_books)
-            display_book_art
-            #insert method to choose a book from the array and add it to users_chosen_books array
         when 3
             system("clear")
             run_quiz(all_books)
-            display_book_art
-            #insert method to choose a book from the array and add it to users_chosen_books array
         when 4
             system("clear")
             display_random_book(all_books)
-            display_book_art
-            #insert method to choose a book from the array and add it to users_chosen_books array
         when 5
+            system("clear")
             exit_app("Thank you for visiting. Happy reading!")
     end
+    display_book_art
     raise if ![1, 2, 3, 4, 5].include?(users_choice)
     rescue
         system("clear")
@@ -45,7 +37,6 @@ def display_all_books(all_books)
     all_books.each do |book|
         puts book.book_details
     end
-    puts
 end
 
 # -------------------- Method for menu option 2 --------------------
@@ -134,7 +125,6 @@ def display_all_genres_and_take_users_choice(all_books)
                 end
             end
     end
-    puts
     raise if ![1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].include?(users_choice)
     rescue
         system("clear")
@@ -202,7 +192,6 @@ def quiz_q_3(quiz_answers, all_books, quiz_q_3_genres)
             puts book.book_details
         end
     end
-    puts
 
     raise if !quiz_q_3_genres.include?(users_choice)
     rescue
@@ -218,14 +207,13 @@ end
 def display_random_book(all_books)
     random_book = all_books.sample
     puts "The wheel has spoken:\n\n#{random_book.book_details}"
-    puts
 end
 
 
 # -------------------- Method for book art --------------------
 
 def display_book_art
-    puts ""\
+    puts "\n"\
     "      __...--~~~~~-._   _.-~~~~~--...__\n"\
     "    //               `V'               \\\\\n"\
     "   //                 |                 \\\\\n"\
@@ -234,14 +222,17 @@ def display_book_art
     "====================\\\\|//====================\n"\
     "                    `---`\n\n"
     puts "Press enter to return to the start menu.\n\n\n"
-    gets
+    users_choice = gets
+    raise if !["\n"].include?(users_choice)
+    rescue
+        system("clear")
+        retry
 end
 
 
 # -------------------- Method to exit app --------------------
 
 def exit_app(message)
-    system("clear")
     puts "#{message}\n\n"
     exit
 end
