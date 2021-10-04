@@ -19,6 +19,7 @@ GEM
     rspec-support (3.10.2)
     strings-ansi (0.2.0)
     tty-cursor (0.7.1)
+    tty-link (0.1.1)
     tty-progressbar (0.18.2)
       strings-ansi (~> 0.2)
       tty-cursor (~> 0.7)
@@ -34,6 +35,7 @@ DEPENDENCIES
   artii (~> 2.1)
   colorize (~> 0.8.1)
   rspec (~> 3.10)
+  tty-link (~> 0.1.1)
   tty-progressbar (~> 0.18.2)
 
 BUNDLED WITH

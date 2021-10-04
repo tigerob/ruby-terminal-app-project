@@ -1,8 +1,10 @@
 require_relative "./library.rb"
 
-require "colorize"
 require "artii"
+require "colorize"
+require "tty-link"
 require "tty-progressbar"
+
 
 title = Artii::Base.new
 bar = TTY::ProgressBar.new("Loading literature [:bar]   ".colorize(:light_blue), bar_format: :heart, total: 30)
@@ -10,10 +12,17 @@ bar = TTY::ProgressBar.new("Loading literature [:bar]   ".colorize(:light_blue),
 all_books = [@tolstoy, @morrison, @joyce, @zafon, @tolkien, @rushdie, @cervantes, @pullman, @heller, @orwell, @hosseini, @alcott, @mitchell, @rand, @wilde, @nabokov, @stockett, @karr, @melville, @pynchon, @atwood]
 
 
-# -------------------- Method for help page --------------------
+# -------------------- Method for Help Page --------------------
 
 def help_page()
-    puts "HELP MENU\n\nInstructions for app..."
+    puts "HELP PAGE\n\n".colorize(:blue).bold
+    puts "This app uses a list of books compiled by Penguin Random House.*\n\n"
+    puts TTY::Link.link_to("Click this link to see the original source", "https://www.penguinrandomhouse.com/the-read-down/21-books-youve-been-meaning-to-read")
+    puts "\n\nNavigation\n\n".colorize(:blue)
+    puts "To navigate the app, use the number, letter and enter keys on your keyboard in accordance with the directions on each page of the app.\n\n\n"
+    puts "Command-line arguments\n\n".colorize(:blue)
+    puts "You can also use the following command-line arguments:\n\n-h    --> This brings up the Help Page (this page)\n\n-n    --> This allows you to enter your name for the app to use. Follow it with your name. For example, if your name was Virginia, you would enter '-n Virginia'.\n\n\n*        *        *\n\n\n"
+    puts "* Penguin Random House, ‘21 Books You've Been Meaning To Read’, PenguinRandomhouse.com, viewed 27 September 2021, <https://www.penguinrandomhouse.com/the-read-down/21-books-youve-been-meaning-to-read/>.".colorize(:white)
     users_choice = $stdin.gets
     raise if !["\n"].include?(users_choice)
     rescue
@@ -44,7 +53,7 @@ end
 
 
 # -------------------- Method for menu --------------------
-def run_app(all_books)
+def run_menu(all_books)
     puts "Welcome to 21 Books You’ve Been Meaning To Read (21 BYBMTR) - the terminal app that solves your dilemma of choosing which book to read.\n\nIn today's world, some people feel they are spoilt for choice, but are paralysed when it comes to making a decision. If that's you, look no further. This app knows Penguin Random House’s 'The 21 Books You've Been Meaning To Read' and will help you find your next nourshing page-turner.\n\nHow would you like to choose a book? Select from the following options and enter a number to continue:\n\n".colorize(:light_blue)
     puts "1.   Choose from the full list of books\n2.   Choose by genre\n3.   Take the 'what do I feel like?' quiz\n4.   Spin the wheel for a random book\n5.   I'm done for now - exit\n\n"
     users_choice = $stdin.gets.strip.to_i
@@ -272,7 +281,7 @@ def display_book_art
     " //__.....----~~~~._\\ | /_.~~~~----.....__\\\\\n"\
     "====================\\\\|//====================\n"\
     "                    `---`\n".colorize(:light_white)
-    puts "Press enter to return to the start menu.\n\n\n".colorize(:light_blue)
+    puts "Press enter to return to the start menu.\n\n".colorize(:light_blue)
     users_choice = $stdin.gets
     raise if !["\n"].include?(users_choice)
     rescue
@@ -281,7 +290,7 @@ def display_book_art
 end
 
 
-# -------------------- Run methods that carry out app --------------------
+# -------------------- Call methods that carry out app --------------------
 
 system("clear")
 
@@ -296,6 +305,6 @@ end
 while true
     system("clear")
     puts title.asciify("21      BYBMTR!").colorize(:light_blue)
-    run_app(all_books)
+    run_menu(all_books)
     display_book_art
 end
