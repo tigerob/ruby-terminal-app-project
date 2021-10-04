@@ -1,19 +1,53 @@
 require_relative "./library.rb"
+
 require "colorize"
 require "artii"
 require "tty-progressbar"
 
 title = Artii::Base.new
-bar = TTY::ProgressBar.new("Loading your literature [:bar]".colorize(:light_blue), bar_format: :heart, total: 20)
+bar = TTY::ProgressBar.new("Loading literature [:bar]   ".colorize(:light_blue), bar_format: :heart, total: 30)
 
 all_books = [@tolstoy, @morrison, @joyce, @zafon, @tolkien, @rushdie, @cervantes, @pullman, @heller, @orwell, @hosseini, @alcott, @mitchell, @rand, @wilde, @nabokov, @stockett, @karr, @melville, @pynchon, @atwood]
+
+
+# -------------------- Method for help page --------------------
+
+def help_page()
+    puts "HELP MENU\n\nInstructions for app..."
+    users_choice = $stdin.gets
+    raise if !["\n"].include?(users_choice)
+    rescue
+        system("clear")
+        retry
+end
+
+
+# -------------------- Method for intro --------------------
+
+def intro    
+    users_name = "noble reader"
+    users_name = ARGV[1] if ARGV[0] == "-n" && ARGV[1]
+
+    puts "Hello, #{users_name}!\n\n".colorize(:light_blue)
+    ARGV.clear
+end
+
+
+# -------------------- Method for progress bar --------------------
+
+def progress_bar(bar)
+    30.times do
+        sleep(0.1)
+        bar.advance
+    end
+end
 
 
 # -------------------- Method for menu --------------------
 def run_app(all_books)
     puts "Welcome to 21 Books You’ve Been Meaning To Read (21 BYBMTR) - the terminal app that solves your dilemma of choosing which book to read.\n\nIn today's world, some people feel they are spoilt for choice, but are paralysed when it comes to making a decision. If that's you, look no further. This app knows Penguin Random House’s 'The 21 Books You've Been Meaning To Read' and will help you find your next nourshing page-turner.\n\nHow would you like to choose a book? Select from the following options and enter a number to continue:\n\n".colorize(:light_blue)
     puts "1.   Choose from the full list of books\n2.   Choose by genre\n3.   Take the 'what do I feel like?' quiz\n4.   Spin the wheel for a random book\n5.   I'm done for now - exit\n\n"
-    users_choice = gets.strip.to_i
+    users_choice = $stdin.gets.strip.to_i
     case users_choice
         when 1
             system("clear")
@@ -34,7 +68,7 @@ def run_app(all_books)
     raise if ![1, 2, 3, 4, 5].include?(users_choice)
     rescue
         system("clear")
-        puts "-------------------------------------------------------------------\n\nPlease type in a number from 1 to 4 to proceed!\n\n-------------------------------------------------------------------\n\n".colorize(:red)
+        puts "-------------------------------------------------------------------\n\nPlease type in a number from 1 to 5 to proceed!\n\n-------------------------------------------------------------------\n\n".colorize(:red)
         retry
 end
 
@@ -50,7 +84,7 @@ end
 def display_all_genres_and_take_users_choice(all_books)
     puts "Select from the following genres and enter a number to continue:\n\n".colorize(:light_blue)
     puts "1.   Adventure\n2.   African-American literature\n3.   Coming of age\n4.   Drama\n5.   Dystopian\n6.   Fantasy\n7.   Historical\n8.   Magical realism\n9.   Memoir\n10.  Modernist literature\n11.  Philosophical\n12.  Satire\n13.  Science fiction\n\n"
-    users_choice = gets.strip.to_i
+    users_choice = $stdin.gets.strip.to_i
     system("clear")
     puts "Here's some piping-hot literature that is right up your alley:\n\n".colorize(:light_blue)
     case users_choice
@@ -155,7 +189,7 @@ end
 
 def quiz_q_1(quiz_answers)
     puts "Do you feel like something new or something old? (We think of anything published within the last 50 years as new and anything published more than 50 years ago as old.) Enter either 'new' or 'old' to continue:\n\n".colorize(:light_blue)
-    users_choice = gets.strip.downcase
+    users_choice = $stdin.gets.strip.downcase
     quiz_answers.push(users_choice)
     raise if !["new", "old"].include?(users_choice)
     rescue
@@ -167,7 +201,7 @@ end
 
 def quiz_q_2(quiz_answers)
     puts "Do you feel like American literature or world literature? Enter either 'American' or 'world' to continue:\n\n".colorize(:light_blue)
-    users_choice = gets.strip.downcase
+    users_choice = $stdin.gets.strip.downcase
     quiz_answers.push(users_choice)
     raise if !["american", "world"].include?(users_choice)
     rescue
@@ -190,7 +224,7 @@ def quiz_q_3(quiz_answers, all_books, quiz_q_3_genres)
     puts quiz_q_3_genres
 
     puts
-    users_choice = gets.strip.downcase
+    users_choice = $stdin.gets.strip.downcase
     quiz_answers.push(users_choice)
 
     system("clear")
@@ -219,7 +253,7 @@ def display_random_book(all_books)
 end
 
 
-# -------------------- Method to exit app --------------------
+# -------------------- Method for menu option 5 (exit app) --------------------
 
 def exit_app(message)
     puts "#{message}\n\n".colorize(:light_blue)
@@ -239,7 +273,7 @@ def display_book_art
     "====================\\\\|//====================\n"\
     "                    `---`\n".colorize(:light_white)
     puts "Press enter to return to the start menu.\n\n\n".colorize(:light_blue)
-    users_choice = gets
+    users_choice = $stdin.gets
     raise if !["\n"].include?(users_choice)
     rescue
         system("clear")
@@ -247,19 +281,17 @@ def display_book_art
 end
 
 
-# -------------------- Method for progress bar --------------------
-
-def progress_bar(bar)
-    20.times do
-        sleep(0.1)
-        bar.advance
-    end
-end
-
 # -------------------- Run methods that carry out app --------------------
 
 system("clear")
-progress_bar(bar)
+
+if ARGV[0] == "-h"
+    help_page()
+    ARGV.clear
+else 
+    intro()
+    progress_bar(bar)
+end
 
 while true
     system("clear")
