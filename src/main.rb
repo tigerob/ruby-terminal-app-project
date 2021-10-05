@@ -21,7 +21,7 @@ def help_page()
     puts "\n\nNavigation\n\n".colorize(:blue)
     puts "To navigate the app, use the number, letter and enter keys on your keyboard in accordance with the directions on each page of the app.\n\n\n"
     puts "Command-line arguments\n\n".colorize(:blue)
-    puts "You can also use the following command-line arguments:\n\n-h    --> This brings up the Help Page (this page)\n\n-n    --> This allows you to enter your name for the app to use. Follow it with your name. For example, if your name was Virginia, you would enter '-n Virginia'.\n\n\n*        *        *\n\n\n"
+    puts "You can also use the following command-line arguments:\n\n-h    --> This brings up the Help Page (this page)\n\n-n    --> This allows you to enter your name for the app to use. Follow it with your name. For example, if your name was Virginia, you would enter '-n Virginia'.\n\n\n*        *        *\n\n\nPress enter to continue to app.\n\n\n"
     puts "* Penguin Random House, ‘21 Books You've Been Meaning To Read’, PenguinRandomhouse.com, viewed 27 September 2021, <https://www.penguinrandomhouse.com/the-read-down/21-books-youve-been-meaning-to-read/>.".colorize(:white)
     users_choice = $stdin.gets
     raise if !["\n"].include?(users_choice)
