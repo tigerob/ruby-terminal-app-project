@@ -1,4 +1,4 @@
-require_relative "./library.rb"
+require_relative "./books_list.rb"
 
 require "artii"
 require "colorize"
