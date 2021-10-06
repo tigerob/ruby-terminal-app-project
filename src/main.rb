@@ -281,7 +281,7 @@ def display_book_art
     " //__.....----~~~~._\\ | /_.~~~~----.....__\\\\\n"\
     "====================\\\\|//====================\n"\
     "                    `---`\n".colorize(:light_white)
-    puts "Press enter to return to the start menu.\n\n".colorize(:light_blue)
+    puts "Press enter to return to the menu.\n\n".colorize(:light_blue)
     users_choice = $stdin.gets
     raise if !["\n"].include?(users_choice)
     rescue
