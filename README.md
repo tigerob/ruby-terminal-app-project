@@ -1,4 +1,41 @@
+# 21 BYBMTR
 
+
+## T
+---
+
+<br><br>
+
+
+Help
+instructions that describe:
+- steps to install the application
+- dependencies required by the application
+- system/hardware requirements
+- features of the application.
+
+Running app:
+- From command line
+- Using scripts
+
+Software Development Plan
+- Purpose
+- Features
+
+
+- How user finds out how to interact with each feature
+- How user interacts with each feature
+- How errors are handled and displayed to the user
+
+## Control-flow diagram
+
+
+Implementation
+See Trello board
+- how each feature will be implemented
+- checklist of tasks for each feature
+- prioritises implementation of different features and/or checklist items within a feature
+- provides a deadline for each feature, checklist, and/or checklist item
 
 
 
@@ -11,6 +48,7 @@ Features
 6. Provide users with a way to access a Help Page for the app
 
 
-
-https://docs.google.com/spreadsheets/d/1PvqB1MU8PR_kv7414R-fcbAOvyT35I_X-Ep74Ys93eA/edit?usp=sharing
+Tests
+- Automatic
+- Manual - https://docs.google.com/spreadsheets/d/1PvqB1MU8PR_kv7414R-fcbAOvyT35I_X-Ep74Ys93eA/edit?usp=sharing
 
