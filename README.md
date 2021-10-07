@@ -35,7 +35,7 @@ https://github.com/tigerob/T1A3
     git clone git@github.com:tigerob/T1A3.git
     ```
 
-5. Navigate to the *src* directory.
+5. Navigate to the *src/* directory.
 
 6. **Dependencies** -  This app requires the following Ruby gems to run properly: *artii* (\~> 2.1), *colorize* (\~> 0.8.1), *rspec* (\~> 3.10), *tty-link* (\~> 0.1.1), *tty-progressbar* (\~> 0.18.2). You can either install them individually with the command ```gem install <name of gem>``` or you can use the Ruby gem *bundler* to automatically install all dependencies. The latter option is more convenient and you could do that by running the following commands in terminal:
     ```
@@ -152,28 +152,37 @@ It operates by using a conditional control structure to run the ```help_page``` 
 
 ### User interaction
 
-The app provides directions to the user at each page on how to interact with that page. For exampple: the menu page includes directions to the user to "enter a number to continue".
+The app provides directions to the user at each page on how to interact with that page. For example, the menu page includes directions to the user to "enter a number to continue".
 
-The user interacts with the app by using both command-line arguments and inputs of letters, numbers and the enter key on their keyboard.
+The user interacts with the app by using both command-line arguments and inputs of letters, numbers and the enter key on their keyboard for in-app interaction.
 
-#### Command-line arguments
+#### **Command-line arguments**
 
-See step 4 of 'Run' under the Help Documentation above for an explanation of the different command-line arguments the user can use.
+See step 4 of 'Run' under the Help Documentation above for an explanation of the different command-line arguments the user can use to interact with the app.
 
-#### In-app interaction
+#### **In-app interaction**
 
-  - How user finds out how to interact with each feature
-  - How user interacts with each feature
-  - How errors are handled and displayed to the user
+At the menu, the user must enter a number from 1 to 5 to proceed with one of the menu options.
 
+At the output of menu option 1, the user must press enter to return to the menu.
 
-#### Error-handling
+At the output of menu option 2, the user must enter a number from 1 to 13 to proceed with one of the listed genres. At the next output, the user must press enter to return to the menu.
 
-The
+At the output of menu option 3, the user must enter either 'new' or 'old' to proceed. At the next output, the user must enter either 'American' or 'world' to proceed. At the next output, the user must enter one of the listed genres to proceed. At the next output, the user must press enter to return to the menu.
+
+At the output of menu option 4, the user must press enter to return to the menu.
+
+At the Help Page, the user must press enter to continue to the menu.
+
+#### **Exception-handling**
+
+If the user enters an invalid input at any point of the in-app interactions, the app raises an exception and returns a message to the user with directions on how to enter a valid input. For example, if the user enters anything other than the numbers 1 to 5 at the menu page, the app returns a message of "Please type in a number from 1 to 5 to proceed!".
 
 ---
 
 ### Control-flow diagram
+
+
 
 ---
 
@@ -185,6 +194,12 @@ The
 
 ---
 
-### Tests
-- Automatic
-- Manual - https://docs.google.com/spreadsheets/d/1PvqB1MU8PR_kv7414R-fcbAOvyT35I_X-Ep74Ys93eA/edit?usp=sharing
+### Testing
+
+Testing of this app has involved both automatic and manual tests.
+
+Automatic testing was performed with the Ruby gem *RSpec*. See the *src/spec/* directory for details of these tests.
+
+Manual testing is recorded in [this spreadsheet](https://docs.google.com/spreadsheets/d/1PvqB1MU8PR_kv7414R-fcbAOvyT35I_X-Ep74Ys93eA/edit?usp=sharing). Screenshot enclosed below:
+
+![](./docs/manual_tests.png)
