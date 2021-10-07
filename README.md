@@ -94,23 +94,37 @@ I've chosen this Penguin Random House list primarily because of Penguin Random H
 
 This app possesses the following features:
 
-1. Provide the user with a way to choose a book from the full list of books
+**1. Provide the user with a way to choose a book from the full list of books**
 
-   This feature outputs for the book details of each book in the book list. It operates by iterating through the ```all_books``` array, each element of which is an instance of the ```Book``` class, and outputting the book details that were initialised for that instance. The ```all_books``` array contains all the books on the list.
+This feature outputs the book details of each book in the book list.
 
-3. Provide the user with a way to choose a book by genre
-   
-   This feature outputs a list of all genres. Once a user inputs a specific genre, this feature then outputs a list of all books within that genre. It operates by iterating through the ```all_books``` array and outputting the book details of each instance for which the array of genres that was initialized for that instance includes the input genre.
+It operates by iterating through the ```all_books``` array, each element of which is an instance of the ```Book``` class, and outputting the book details that were initialised for that instance. The ```all_books``` array contains all the books on the list.
 
-4. Provide the user with a way to choose a book by taking the 'what do I feel like?' quiz
-   
-   T
+**2. Provide the user with a way to choose a book by genre**
 
-5. Provide the user with a random choice of book
+This feature outputs a list of all genres. Once a user inputs a specific genre, this feature then outputs the book details of all books within that genre.
 
-6. Provide the userwith a way to exit the app
+It operates by iterating through the ```all_books``` array and outputting the book details of each instance for which the array of genres that was initialized for that instance includes the input genre.
 
-7. Provide the user with a way to access a Help Page for the app
+**3. Provide the user with a way to choose a book by taking the 'what do I feel like?' quiz**
+
+This feature outputs the first quiz question ("Do you feel like something new or old?"). Once a user inputs an answer, this feature then outputs the second quiz question ("Do you feel like American literature or world literature?"). Once the user inputs an answer, this feature then outputs a list of genres within the field defined by the user's first two inputs. Once the user inputs a genre, this feature then outputs the book details of all books that accord with the user's three inputs.
+
+It operates by pushing the user's first two inputs to the ```quiz_answers``` array. It then iterates through the ```all_books``` array and, for each instance that contains the same tags stored in ```quiz_answers```, pushes the genres for that instance into the ```quiz_genres``` array. It cleans the ```quiz_genres``` array (by flattening it and filtering out any duplicates) and outputs the list of genres. It takes the user's third input and pushes that to ```quiz_answers```. Finally, it iterates through the ```all_books``` array and ouputs the book details of each instance that contains all three elements contained in ```quiz_answers```.
+
+**4. Provide the user with a random choice of book**
+
+This feature outputs the book details of a random book from the list.
+
+It operates by outputting the book details of an instance randomly selected from the ```all_books``` array using the in-built Ruby ```.sample``` method.
+
+**5. Provide the user with a way to exit the app**
+
+This feature terminates the app process and returns the user to the terminal shell promt.
+
+It operates by running the in-built Ruby ```exit``` method to exit the user from the infinite loop of the app.
+
+**6. Provide the user with a way to access a Help Page for the app**
 
 ### User interaction
   - How user finds out how to interact with each feature
