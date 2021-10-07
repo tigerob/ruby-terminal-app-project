@@ -76,26 +76,41 @@ Run the app in any of the following ways with the following commands:
 
 ### Purpose
 
-(problem it solves, scope, target audience) (300-500 words)
-
 **Problem**: The dilemma of choosing which book to read next.
 
-**Solution**: A terminal app that knows Penguin Random House’s 'The 21 Books You've Been Meaning To Read' and gives users various interactive ways to choose one or more of these books.[^1]
+**Solution**: A terminal app that knows Penguin Random House’s 'The 21 Books You've Been Meaning To Read' and gives the user various interactive ways to choose one or more of these books.[^1]
 
+**Target audience**: Anyone who is interested in inspiration for which book to read next and is open to considering highly esteemed works of literature published within the past circa four centuries.
 
+This terminal app presents the user with a menu of options for choosing a book. Those are: (1) from the full list; (2) by genre; (3) by quiz; and (4) by random selection. See 'Features' below for a full explanation of these options and see 'User Interaction' below for a full explanation of how a member of the target audience will interact with this app.
+
+I've chosen this Penguin Random House list primarily because of Penguin Random House's longstanding reputation as a quality global publisher of literature. I have confined the scope of this app to the Penguin Random House list for the purposes of this project. However, the app could be amended in future to build out the book list so that the app contained an even more extensive file of books for the user.
 
 [^1]: Penguin Random House, ‘21 Books You've Been Meaning To Read’, PenguinRandomhouse.com, viewed 27 September 2021, <<https://www.penguinrandomhouse.com/the-read-down/21-books-youve-been-meaning-to-read/>>.
 
+### Features
 
-### Features (300 words)
+(300 words)
 
-Features
-1. Provide user with a way to choose from the full list of books
-2. Provide users with a way to choose by genre
-3. Provide users with a way to choose by quiz
-4. Provide users with a random choice of book
-5. Provide users with a way to exit the app
-6. Provide users with a way to access a Help Page for the app
+This app possesses the following features:
+
+1. Provide the user with a way to choose a book from the full list of books
+
+   This feature outputs for the book details of each book in the book list. It operates by iterating through the ```all_books``` array, each element of which is an instance of the ```Book``` class, and outputting the book details that were initialised for that instance. The ```all_books``` array contains all the books on the list.
+
+3. Provide the user with a way to choose a book by genre
+   
+   This feature outputs a list of all genres. Once a user inputs a specific genre, this feature then outputs a list of all books within that genre. It operates by iterating through the ```all_books``` array and outputting the book details of each instance for which the array of genres that was initialized for that instance includes the input genre.
+
+4. Provide the user with a way to choose a book by taking the 'what do I feel like?' quiz
+   
+   T
+
+5. Provide the user with a random choice of book
+
+6. Provide the userwith a way to exit the app
+
+7. Provide the user with a way to access a Help Page for the app
 
 ### User interaction
   - How user finds out how to interact with each feature
