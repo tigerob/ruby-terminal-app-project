@@ -186,7 +186,12 @@ If the user enters an invalid input at any point of the in-app interactions, the
 
 ---
 
-### Implementation (see Trello board)
+### Implementation
+
+Project implementation is documented by [this Trello board](https://trello.com/b/aFVSa40o/project-ruby-terminal-app-t1a3). Screenshot included below:
+
+
+
   - how each feature will be implemented
   - checklist of tasks for each feature
   - prioritises implementation of different features and/or checklist items within a feature
@@ -200,6 +205,6 @@ Testing of this app has involved both automatic and manual tests.
 
 Automatic testing was performed with the Ruby gem *RSpec*. See the *src/spec/* directory for details of these tests.
 
-Manual testing is recorded in [this spreadsheet](https://docs.google.com/spreadsheets/d/1PvqB1MU8PR_kv7414R-fcbAOvyT35I_X-Ep74Ys93eA/edit?usp=sharing). Screenshot enclosed below:
+Manual testing is documented in [this spreadsheet](https://docs.google.com/spreadsheets/d/1PvqB1MU8PR_kv7414R-fcbAOvyT35I_X-Ep74Ys93eA/edit?usp=sharing). Screenshot included below:
 
 ![](./docs/manual_tests.png)
