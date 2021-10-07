@@ -80,17 +80,15 @@ Run the app in any of the following ways with the following commands:
 
 **Solution**: A terminal app that knows Penguin Random House’s 'The 21 Books You've Been Meaning To Read' and gives the user various interactive ways to choose one or more of these books.[^1]
 
-**Target audience**: Anyone who is interested in inspiration for which book to read next and is open to considering highly esteemed works of literature published within the past circa four centuries.
+**Target audience**: Anyone who is interested in inspiration for which book to read next and is open to considering highly esteemed works of literature published approximately within the past four centuries.
 
 This terminal app presents the user with a menu of options for choosing a book. Those are: (1) from the full list; (2) by genre; (3) by quiz; and (4) by random selection. See 'Features' below for a full explanation of these options and see 'User Interaction' below for a full explanation of how a member of the target audience will interact with this app.
 
-I've chosen this Penguin Random House list primarily because of Penguin Random House's longstanding reputation as a quality global publisher of literature. I have confined the scope of this app to the Penguin Random House list for the purposes of this project. However, the app could be amended in future to build out the book list so that the app contained an even more extensive file of books for the user.
+I've chosen this Penguin Random House list primarily because of Penguin Random House's longstanding reputation as a quality global publisher of literature. I have confined the scope of this app to the Penguin Random House list for the purposes of this project. However, the app could be amended in future to build out the book list so that the app contains an even more extensive file of books for the user.
 
 [^1]: Penguin Random House, ‘21 Books You've Been Meaning To Read’, PenguinRandomhouse.com, viewed 27 September 2021, <<https://www.penguinrandomhouse.com/the-read-down/21-books-youve-been-meaning-to-read/>>.
 
 ### Features
-
-(300 words)
 
 This app possesses the following features:
 
@@ -120,11 +118,15 @@ It operates by outputting the book details of an instance randomly selected from
 
 **5. Provide the user with a way to exit the app**
 
-This feature terminates the app process and returns the user to the terminal shell promt.
+This feature terminates the app process and returns the user to the terminal shell prompt.
 
 It operates by running the in-built Ruby ```exit``` method to exit the user from the infinite loop of the app.
 
 **6. Provide the user with a way to access a Help Page for the app**
+
+This feature outputs the Help Page, which contains basic information for the user about the app and about use of the app, prior to the menu of the app.
+
+It operates by using a conditional control structure to run the ```help_page``` method if the user runs the app with the command-line argument ```-h```.
 
 ### User interaction
   - How user finds out how to interact with each feature
