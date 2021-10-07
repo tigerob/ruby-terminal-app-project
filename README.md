@@ -2,9 +2,13 @@
 
 ## Key Details
 
-**App**: 21 Books You've Been Meaning To Read (21 BYBMTR) - a terminal app to help you choose which book to read next.
+### App
 
-**GitHub repository**: https://github.com/tigerob/T1A3
+21 Books You've Been Meaning To Read (21 BYBMTR) - a terminal app to help you choose which book to read next.
+
+### GitHub repository
+
+https://github.com/tigerob/T1A3
 
 ---
 <br>
@@ -60,7 +64,7 @@ Run the app in any of the following ways with the following commands:
         ruby main.rb -h
         ``` 
    
-   2. run the app with a personal touch incorporating the name you input at \<name>:
+   2. run the app with a personal touch, incorporating the name you input at \<name>:
         ```
         ruby main.rb -n <name>
         ```
@@ -73,6 +77,14 @@ Run the app in any of the following ways with the following commands:
 ### Purpose
 
 (problem it solves, scope, target audience) (300-500 words)
+
+**Problem**: The dilemma of choosing which book to read next.
+
+**Solution**: A terminal app that knows Penguin Random House’s 'The 21 Books You've Been Meaning To Read' and gives users various interactive ways to choose one or more of these books.[^1]
+
+
+
+[^1]: Penguin Random House, ‘21 Books You've Been Meaning To Read’, PenguinRandomhouse.com, viewed 27 September 2021, <<https://www.penguinrandomhouse.com/the-read-down/21-books-youve-been-meaning-to-read/>>.
 
 
 ### Features (300 words)
