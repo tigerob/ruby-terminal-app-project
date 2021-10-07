@@ -116,7 +116,7 @@ This app possesses the following features:
 
 This feature outputs the book details of each book in the book list.
 
-It operates by iterating through the ```all_books``` array, each element of which is an instance of the ```Book``` class, and outputting the book details that were initialised for that instance. The ```all_books``` array contains all the books on the list.
+It operates by iterating through the ```all_books``` array, each element of which is an instance of the ```Book``` class, and outputting the book details that were initialized for that instance. The ```all_books``` array contains all the books on the list.
 
 **2. Provide the user with a way to choose a book by genre**
 
@@ -188,14 +188,23 @@ If the user enters an invalid input at any point of the in-app interactions, the
 
 ### Implementation
 
-Project implementation is documented by [this Trello board](https://trello.com/b/aFVSa40o/project-ruby-terminal-app-t1a3). Screenshot included below:
+Project implementation was managed and documented by [this Trello board](https://trello.com/b/aFVSa40o/project-ruby-terminal-app-t1a3). Screenshots included below:
 
+![](./docs/trello_board_1.png)
 
+![](./docs/trello_board_2.png)
 
-  - how each feature will be implemented
-  - checklist of tasks for each feature
-  - prioritises implementation of different features and/or checklist items within a feature
-  - provides a deadline for each feature, checklist, and/or checklist item
+![](./docs/trello_board_3.png)
+
+![](./docs/trello_board_4.png)
+
+![](./docs/trello_board_5.png)
+
+![](./docs/trello_board_6.png)
+
+![](./docs/trello_board_7.png)
+
+![](./docs/trello_board_8.png)
 
 ---
 

@@ -33,7 +33,7 @@ end
 
 # -------------------- Method for intro --------------------
 
-def intro    
+def intro()
     users_name = "noble reader"
     users_name = ARGV[1] if ARGV[0] == "-n" && ARGV[1]
 
