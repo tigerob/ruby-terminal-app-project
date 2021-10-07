@@ -30,7 +30,7 @@ https://github.com/tigerob/T1A3
 
 5. Navigate to the *src* directory.
 
-6. **Dependencies** -  This app requires the following Ruby gems to run properly: *artii* (~> 2.1), *colorize* (~> 0.8.1), *rspec* (~> 3.10), *tty-link* (~> 0.1.1), *tty-progressbar* (~> 0.18.2). You can either install them individually with the command ```gem install <name of gem>``` or you can use the Ruby gem *bundler* to automatically install all dependencies. The latter option is more convenient and you could do that by running the following commands in terminal:
+6. **Dependencies** -  This app requires the following Ruby gems to run properly: *artii* (\~> 2.1), *colorize* (\~> 0.8.1), *rspec* (\~> 3.10), *tty-link* (\~> 0.1.1), *tty-progressbar* (\~> 0.18.2). You can either install them individually with the command ```gem install <name of gem>``` or you can use the Ruby gem *bundler* to automatically install all dependencies. The latter option is more convenient and you could do that by running the following commands in terminal:
     ```
     gem install bundler
     ``` 
