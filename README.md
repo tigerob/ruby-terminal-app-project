@@ -2,18 +2,25 @@
 
 ## Key Details
 
-### App
+---
+
+#### App
 
 21 Books You've Been Meaning To Read (21 BYBMTR) - a terminal app to help you choose which book to read next.
 
-### GitHub repository
+#### GitHub repository
 
 https://github.com/tigerob/T1A3
+
+---
 
 ---
 <br>
 
 ## Help Documentation
+
+---
+
 
 ### Installation
 
@@ -38,7 +45,9 @@ https://github.com/tigerob/T1A3
     bundle install
     ```
 
-## Run
+---
+
+### Run
 
 Run the app in any of the following ways with the following commands:
 
@@ -70,9 +79,18 @@ Run the app in any of the following ways with the following commands:
         ```
 
 ---
+
+### Features & User Interaction
+
+See 'Features' and 'User Interaction' in the Software Development Plan below for instructions on how to use the app's features.
+
+---
+
+---
 <br>
 
 ## Software Development Plan
+---
 
 ### Purpose
 
@@ -87,6 +105,8 @@ This terminal app presents the user with a menu of options for choosing a book. 
 I've chosen this Penguin Random House list primarily because of Penguin Random House's longstanding reputation as a quality global publisher of literature. I have confined the scope of this app to the Penguin Random House list for the purposes of this project. However, the app could be amended in future to build out the book list so that the app contains an even more extensive file of books for the user.
 
 [^1]: Penguin Random House, ‘21 Books You've Been Meaning To Read’, PenguinRandomhouse.com, viewed 27 September 2021, <<https://www.penguinrandomhouse.com/the-read-down/21-books-youve-been-meaning-to-read/>>.
+
+---
 
 ### Features
 
@@ -128,18 +148,42 @@ This feature outputs the Help Page, which contains basic information for the use
 
 It operates by using a conditional control structure to run the ```help_page``` method if the user runs the app with the command-line argument ```-h```.
 
+---
+
 ### User interaction
+
+The app provides directions to the user at each page on how to interact with that page. For exampple: the menu page includes directions to the user to "enter a number to continue".
+
+The user interacts with the app by using both command-line arguments and inputs of letters, numbers and the enter key on their keyboard.
+
+#### Command-line arguments
+
+See step 4 of 'Run' under the Help Documentation above for an explanation of the different command-line arguments the user can use.
+
+#### In-app interaction
+
   - How user finds out how to interact with each feature
   - How user interacts with each feature
   - How errors are handled and displayed to the user
 
+
+#### Error-handling
+
+The
+
+---
+
 ### Control-flow diagram
+
+---
 
 ### Implementation (see Trello board)
   - how each feature will be implemented
   - checklist of tasks for each feature
   - prioritises implementation of different features and/or checklist items within a feature
   - provides a deadline for each feature, checklist, and/or checklist item
+
+---
 
 ### Tests
 - Automatic
