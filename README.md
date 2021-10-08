@@ -182,7 +182,7 @@ If the user enters an invalid input at any point of the in-app interactions, the
 
 ### Control-flow diagram
 
-
+![Control-flow diagram](./docs/control_flow_diagram.png)
 
 ---
 
@@ -190,21 +190,21 @@ If the user enters an invalid input at any point of the in-app interactions, the
 
 Project implementation was managed and documented by [this Trello board](https://trello.com/b/aFVSa40o/project-ruby-terminal-app-t1a3). Screenshots included below:
 
-![](./docs/trello_board_1.png)
+![Trello board 1](./docs/trello_board_1.png)
 
-![](./docs/trello_board_2.png)
+![Trello board 2](./docs/trello_board_2.png)
 
-![](./docs/trello_board_3.png)
+![Trello board 3](./docs/trello_board_3.png)
 
-![](./docs/trello_board_4.png)
+![Trello board 4](./docs/trello_board_4.png)
 
-![](./docs/trello_board_5.png)
+![Trello board 5](./docs/trello_board_5.png)
 
-![](./docs/trello_board_6.png)
+![Trello board 6](./docs/trello_board_6.png)
 
-![](./docs/trello_board_7.png)
+![Trello board 7](./docs/trello_board_7.png)
 
-![](./docs/trello_board_8.png)
+![Trello board 8](./docs/trello_board_8.png)
 
 ---
 
