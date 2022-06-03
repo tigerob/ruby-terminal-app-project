@@ -10,7 +10,7 @@
 
 #### GitHub repository
 
-https://github.com/tigerob/T1A3
+https://github.com/tigerob/ruby-terminal-app-project
 
 ---
 
